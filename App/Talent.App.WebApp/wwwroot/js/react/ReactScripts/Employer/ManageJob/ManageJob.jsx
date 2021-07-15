@@ -135,6 +135,7 @@ this.init();
     }
 
     render() {
+      // options for sortby dropdown
       const  dateOptions = [
   {
     key: 'Newest first',
@@ -147,6 +148,7 @@ this.init();
     value: 'asc',
   }
       ]
+      //options for filter dropdown
 const sortOptions = [
   {
     key: 'showActive',

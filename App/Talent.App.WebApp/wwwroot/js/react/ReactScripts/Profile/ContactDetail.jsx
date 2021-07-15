@@ -116,8 +116,8 @@ export class IndividualDetailSection extends Component {
     }
 
     renderDisplay() {
-
-        let firstName = this.props.details ? `${this.props.details.lastName} ${this.props.details.firstName}` : ""
+// displaying the full name of the employer
+        let name = this.props.details ? `${this.props.details.lastName} ${this.props.details.firstName}` : ""
         let email = this.props.details ? this.props.details.email : ""
         let phone = this.props.details ? this.props.details.phone : ""
 
@@ -125,7 +125,7 @@ export class IndividualDetailSection extends Component {
             <div className='row'>
                 <div className="ui sixteen wide column">
                     <React.Fragment>
-                        <p>Name: {firstName}</p>
+                        <p>Name: {name}</p>
                         <p>Email: {email}</p>
                         <p>Phone: {phone}</p>
                     </React.Fragment>
@@ -262,6 +262,10 @@ export class CompanyDetailSection extends Component {
                         <p>Phone: {phone}</p>
                         <p> Location: {location.city}, {location.country}</p>
                     </React.Fragment>
+                    {/* 
+                    
+                    Invoking the openEdit function when the Edit button clicked
+                     */}
                     <button type="button" className="ui right floated teal button" onClick={this.openEdit}>Edit</button>
                 </div>
             </div>

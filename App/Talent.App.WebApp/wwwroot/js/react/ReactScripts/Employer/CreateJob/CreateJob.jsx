@@ -138,6 +138,7 @@ export default class CreateJob extends React.Component {
                         <div className="ui grid">
                             <div className="row">
                                 <div className="sixteen wide center aligned padded column">
+                                {/* changed the header according to the create job and update job */}
                                    {this.state.jobData.id === "" ? <h1>Create Job</h1> : <h1>Update Job</h1>}
                                 </div>
                             </div>
