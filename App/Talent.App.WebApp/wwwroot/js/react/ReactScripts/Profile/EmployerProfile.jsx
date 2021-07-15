@@ -52,7 +52,7 @@ export default class EmployeeProfile extends React.Component {
     loadData() {
         var cookies = Cookies.get('talentAuthToken');
         $.ajax({
-            url: 'http://localhost:60290/profile/profile/getEmployerProfile',
+            url: 'https://service-profile-task.azurewebsites.net/profile/profile/getEmployerProfile',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
                 'Content-Type': 'application/json'
@@ -64,7 +64,7 @@ export default class EmployeeProfile extends React.Component {
                 let employerData = null;
                 if (res.employer) {
                     employerData = res.employer
-                    //console.log("employerData", employerData)
+                    console.log("employerData", employerData)
                 }
                 this.updateWithoutSave(employerData)
             }.bind(this),
@@ -153,7 +153,7 @@ export default class EmployeeProfile extends React.Component {
 
         var cookies = Cookies.get('talentAuthToken');
         $.ajax({
-            url: 'http://localhost:60290/profile/profile/saveEmployerProfile',
+            url: 'https://service-profile-task.azurewebsites.net/profile/profile/saveEmployerProfile',
             headers: {
                 'Authorization': 'Bearer ' + cookies,
                 'Content-Type': 'application/json'

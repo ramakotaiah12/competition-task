@@ -170,10 +170,11 @@ namespace Talent.Services.Listing.Controllers
             try
             {
                 employerId = employerId == null ? _userAppContext.CurrentUserId : employerId;
-                var sortedJobs = (await _jobService.GetEmployerJobsAsync(employerId));
-
+                var sortedJobs = await _jobService.GetEmployerJobsAsync(employerId);
+                Console.WriteLine(sortedJobs);
                 if (!showActive)
                 {
+                    Console.WriteLine(JobStatus.Active);
                     sortedJobs = sortedJobs.Where(x => x.Status != JobStatus.Active);
                 }
 
@@ -192,10 +193,9 @@ namespace Talent.Services.Listing.Controllers
                     sortedJobs = sortedJobs.Where(x => x.ExpiryDate < DateTime.UtcNow);
                 }
 
-                //TODO Draft not implemented yet
+                //    TODO Draft not implemented yet
                 //if (!showDraft)
                 //{
-
                 //}
 
                 if (sortbyDate == "desc")

@@ -17,6 +17,7 @@ namespace Talent.Services.Identity
         public static void Main(string[] args)
         {
             ServiceHost.Create<Startup>(args)
+
                 .UseRabbitMq()
                 .SubcribeToCommand<AuthenticateUser>()
                 .SubcribeToCommand<CreateUser>()

@@ -18,10 +18,10 @@
     "Mars.Services.Identity": {
       "commandName": "Project",
       "launchBrowser": true,
+      "applicationUrl": "http://localhost:60998/",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "http://localhost:60998/"
+      }
     }
   }
 }
